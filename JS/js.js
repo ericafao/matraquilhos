@@ -172,6 +172,10 @@ function mudaDirecaoNegativa(limEsquerda, limCima, limBaixo){
  * ### MOVE BOLA
  * #############################################################################
  */
+
+/**
+ * Move a bola
+ */
 function moveBola() {
 
   var bola = matrecos.bola;
@@ -349,6 +353,9 @@ function moveBola() {
   bateLimitesCampo();
 }
 
+/**
+ * Golo equipa B
+ */
 function goloB(){
   resetBola(1);
   marcador.scoreB++;
@@ -358,6 +365,9 @@ function goloB(){
   vencedor(marcador.scoreB, "B");
 }
 
+/**
+ * Golo equipa A
+ */
 function goloA(){
   resetBola(-1);
   marcador.scoreA++;
@@ -367,6 +377,10 @@ function goloA(){
   vencedor(marcador.scoreA, "A");
 }
 
+/**
+ * Reset da posição da bola
+ * @param direccao 
+ */
 function resetBola(direccao) {
   var bola = matrecos.bola;
 
@@ -381,6 +395,11 @@ function resetBola(direccao) {
   bola.direcX = direccao;
 }
 
+/**
+ * Verifica se ha um vencedor
+ * @param score 
+ * @param equipa 
+ */
 function vencedor(score, equipa){
   if(score === 10){
     alert("A equipa " + equipa + " ganhou.");
@@ -389,6 +408,9 @@ function vencedor(score, equipa){
   }
 }
 
+/**
+ * Reset do marcador
+ */
 function resetMarcador(){
   marcador.scoreA = 0;
   marcador.scoreB = 0;
@@ -399,6 +421,9 @@ function setScore(scoreA,scoreB) {
   $('#scoreB').html(scoreB);
 }
 
+/**
+ * Move bonecos verticalmente
+ */
 function moveBonecos() {
 
   console.log(matrecos.teclasPressionadas[TECLA.Ç]);
