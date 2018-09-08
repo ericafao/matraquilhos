@@ -1,0 +1,244 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8">
+
+<title>Documento sem título</title>
+
+<link href="Style/style.css" rel="stylesheet" type="text/css">
+
+	<style>
+
+		
+
+	:root {
+
+	--campo--bg-color: green;
+
+    --boneco1--bg-color: blue;
+
+  	--boneco2--bg-color: red;
+
+  	
+
+    --defesas--height: 160px;
+
+  	--medios--height: 350px;
+
+  	--avancados--height: 270px;
+
+    
+
+    --gr--percentage: 6%;
+
+    --defesas--percentage:4%;
+
+    --medios--percentage:0%;
+
+    --avancados--percentage:2%;
+
+    
+
+    --boneco--width: 10px;
+
+    --boneco--height: 25px;
+
+    
+
+    --campo--width: 600px;
+
+    --campo--height:433px;
+
+    
+
+    --bola--size: 15px;
+
+    --bola--radius: 10px;
+
+    
+
+    --gr--padding: 60px;
+
+}
+
+	</style>
+
+	
+
+<script
+
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+
+  crossorigin="anonymous"></script>
+
+
+
+<script src="JS/js.js"></script>
+
+
+
+</head>
+
+
+
+<body>
+
+	<header><h1>Matraquilhos</h1></header>
+
+	
+
+	<div class="jogo">
+		<div class="campo">
+			<div class="grEquipa1" style="padding-left: var(--gr--padding)">
+				<div id="gr1" class="bonecos1" ></div>
+			</div>
+
+			
+
+			<div class="defesaEquipa1">
+				<div id="defesas1" class="bonecos1"></div>
+				<div id="defesas2" class="bonecos1"></div>
+			</div>
+
+			
+
+			<div class="avancadosEquipa2">
+				<div id="avancados4" class="bonecos2"></div>
+				<div id="avancados5" class="bonecos2"></div>
+				<div id="avancados6" class="bonecos2"></div>
+			</div>
+
+			
+
+			
+
+			<div class="mediosEquipa1">
+				<div id="medios1" class="bonecos1"></div>
+				<div id="medios2" class="bonecos1"></div>
+
+				<div id="medios3" class="bonecos1"></div>
+
+				<div id="medios4" class="bonecos1"></div>
+
+				<div id="medios5" class="bonecos1"></div>
+				
+			</div>
+
+			
+
+			<div class="bola" ></div>
+
+			
+
+			<div class="mediosEquipa2">
+
+				<div id="medios6" class="bonecos2"></div>
+
+				<div id="medios7" class="bonecos2"></div>
+
+				<div id="medios8" class="bonecos2"></div>
+
+				<div id="medios9" class="bonecos2"></div>
+
+				<div id="medios10" class="bonecos2"></div>
+
+			</div>
+
+			
+
+			<div class="avancadosEquipa1">
+
+				<div id="avancados1" class="bonecos1"></div>
+
+				<div id="avancados2" class="bonecos1"></div>
+
+				<div id="avancados3" class="bonecos1"></div>
+
+			</div>
+
+			
+
+			<div class="defesaEquipa2">
+
+				<div id="defesas3" class="bonecos2"></div>
+
+				<div id="defesas4" class="bonecos2"></div>
+
+			</div>
+
+			
+
+			<div class="grEquipa2" style="padding-right: var(--gr--padding)">
+
+				<div id="gr2" class="bonecos2" ></div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<footer>
+
+
+
+	<div id="marcador">
+
+
+
+		<div id="JogadorA" class="score">Jogador A: <span id="scoreA">0</span></div>
+
+
+
+		<div id="JogadorB" class="score">Jogador B: <span id="scoreB">0</span></div>
+
+		
+
+	</div>
+
+	<div id="teclasA">
+
+	
+
+		<h2>Teclas:</h2>
+
+		<h3>Jogador A:</h3>
+
+		<p> SUBIR: Q W E R</p>
+
+		<p> DESCER: A S D F</p>	
+
+	</div>
+
+		<div id="teclasB">
+
+	
+
+		<p></p>
+
+		<h3>Jogador B:</h3>
+
+		<p> SUBIR: U I O P</p>
+
+		<p> DESCER: J K L Ç</p>	
+
+	</div>
+
+
+
+</footer>
+
+
+
+	
+
+	
+
+</body>
+
+</html>

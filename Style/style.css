@@ -1,0 +1,140 @@
+@charset "utf-8";
+/* CSS Document */
+
+h1 {
+  font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+  text-align: center;
+}
+
+.campo {
+  background: url(../img/fundo_jogo.jpg) no-repeat; 
+  background-size: 600px 433px;
+  height: var(--campo--height);
+  width: var(--campo--width);
+  position: absolute;
+  overflow: hidden;
+  left: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: -1;
+}
+
+.bonecos1 {
+  background-color: var(--boneco1--bg-color);
+  background-size: 10px 25px;
+  position: relative;
+  height: var(--boneco--height);
+  width: var(--boneco--width);
+}
+
+.bonecos2 {
+  background-color: var(--boneco2--bg-color);
+  background-size: 10px 25px;
+  position: relative;
+  height: var(--boneco--height);
+  width: var(--boneco--width);
+}
+
+.grEquipa1 {
+  height: var(--boneco--height);
+  width: var(--boneco--width);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.defesaEquipa1 {
+  height: var(--defesas--height);
+  width: var(--boneco--width);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mediosEquipa1 {
+  height: var(--medios--height);
+  width: var(--boneco--width);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.avancadosEquipa1 {
+  height: var(--avancados--height);
+  width: var(--boneco--width);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.grEquipa2 {
+  height: var(--boneco--height);
+  width: var(--boneco--width);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.defesaEquipa2 {
+  height: var(--defesas--height);
+  width: var(--boneco--width);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mediosEquipa2 {
+  height: var(--medios--height);
+  width: var(--boneco--width);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.avancadosEquipa2 {
+  height: var(--avancados--height);
+  width: var(--boneco--width);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bola {
+  background-color: burlywood;
+  position: relative;
+  width: var(--bola--size);
+  height: var(--bola--size);
+  border-radius: var(--bola--radius);
+  z-index: 1;
+}
+
+#teclasA {
+  position: absolute;
+  font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+  top: 430px;
+}
+
+#teclasB {
+  position: absolute;
+  font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+  top: 477px;
+  left: 200px;
+}
+
+#marcador {
+  position: absolute;
+  font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+  font-size: 16px;
+  left: 15%;
+  top: 240px;
+
+}
