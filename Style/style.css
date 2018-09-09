@@ -8,7 +8,7 @@ h1 {
 
 .campo {
   background: url(../img/fundo_jogo.jpg) no-repeat; 
-  background-size: 600px 433px;
+  background-size: var(--campo--width) var(--campo--height);
   height: var(--campo--height);
   width: var(--campo--width);
   position: absolute;
@@ -21,16 +21,16 @@ h1 {
 }
 
 .bonecos1 {
-  background-color: var(--boneco1--bg-color);
-  background-size: 10px 25px;
+  background: url(../img/matrecosA.png);
+  background-size: var(--boneco--width) var(--boneco--height);
   position: relative;
   height: var(--boneco--height);
   width: var(--boneco--width);
 }
 
 .bonecos2 {
-  background-color: var(--boneco2--bg-color);
-  background-size: 10px 25px;
+  background: url(../img/matrecosB.png);
+  background-size: var(--boneco--width) var(--boneco--height);
   position: relative;
   height: var(--boneco--height);
   width: var(--boneco--width);

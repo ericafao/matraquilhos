@@ -12,14 +12,14 @@ var grPadding = parseInt(rootStyles.getPropertyValue('--gr--padding'));
 var campo = {
   xMin: -300,
   xMax: 300,
-  yMin: -216.6,
-  yMax: 216.6
+  yMin: -216.5,
+  yMax: 216.5
 };
 var baliza = {
   xEsq: campo.xMin,
   xDta: campo.xMax,
-  yMin: -50,
-  yMax: 50
+  yMin: -70,
+  yMax: 65
 };
 
 var TECLA = {
@@ -328,14 +328,6 @@ function moveBola() {
   var av3BBaixo = av3BCima + alturaBoneco;
   mudaDirecaoNegativa(avBEsq, av3BCima, av3BBaixo);  
 
-  /**
-   * Calcula o topo do jogador 1 de cada grupo
-   * @param el elemento
-   */
-  function calculaCimaJogador1(el){
-    return campo.yMin + (alturaCampo - parseInt($(el).css('height')))/2 + parseInt($(el).css('top'));
-  }
-
   //equação responsavel pelo movimento logico da bola
 
   bola.x += bola.velocidade * bola.direcX;
@@ -352,6 +344,22 @@ function moveBola() {
    */
   bateLimitesCampo();
 }
+
+  /**
+   * Calcula o topo do jogador 1 de cada grupo
+   * @param el elemento
+   */
+  function calculaCimaJogador1(el){
+    return campo.yMin + (alturaCampo - parseInt($(el).css('height')))/2 + parseInt($(el).css('top'));
+  }
+
+  /**
+   * Calcula o topo real da div grupo
+   * @param el elemento
+   */
+  function calculaTopoDiv(el, limSup){
+    return limSup - campo.yMin - (alturaCampo - parseInt($(el).css('height')))/2 ;
+  }
 
 /**
  * Golo equipa B
@@ -432,23 +440,30 @@ function moveBonecos() {
   /** EQUIPA A */
   deslocacao('.grEquipa1', TECLA.Q, -movimento);
   deslocacao('.grEquipa1', TECLA.A, movimento);
+  limiteCampoJogador('.grEquipa1', baliza.yMin, baliza.yMax);
   deslocacao('.defesaEquipa1', TECLA.W, -movimento);
-  limiteSupCampoJogador('.defesaEquipa1');
   deslocacao('.defesaEquipa1', TECLA.S, movimento);
+  limiteCampoJogador('.defesaEquipa1', campo.yMin, campo.yMax);
   deslocacao('.mediosEquipa1', TECLA.E, -movimento);
   deslocacao('.mediosEquipa1', TECLA.D, movimento);
+  limiteCampoJogador('.mediosEquipa1', campo.yMin, campo.yMax);
   deslocacao('.avancadosEquipa1', TECLA.R, -movimento);
   deslocacao('.avancadosEquipa1', TECLA.F, movimento);
+  limiteCampoJogador('.avancadosEquipa1', campo.yMin, campo.yMax);
 
   /** EQUIPA B */
   deslocacao('.grEquipa2', TECLA.P, -movimento);
   deslocacao('.grEquipa2', TECLA.Ç, movimento);
+  limiteCampoJogador('.grEquipa2', baliza.yMin, baliza.yMax);
   deslocacao('.defesaEquipa2', TECLA.O, -movimento);
   deslocacao('.defesaEquipa2', TECLA.L, movimento);
+  limiteCampoJogador('.defesaEquipa2', campo.yMin, campo.yMax);
   deslocacao('.mediosEquipa2', TECLA.I, -movimento);
   deslocacao('.mediosEquipa2', TECLA.K, movimento);
+  limiteCampoJogador('.mediosEquipa2', campo.yMin, campo.yMax);
   deslocacao('.avancadosEquipa2', TECLA.U, -movimento);
   deslocacao('.avancadosEquipa2', TECLA.J, movimento);
+  limiteCampoJogador('.avancadosEquipa2', campo.yMin, campo.yMax);
 
   function deslocacao(el, tecla, mov){
     if(matrecos.teclasPressionadas[tecla]){
@@ -456,11 +471,16 @@ function moveBonecos() {
       $(el).css('top', topo + mov);
     }
   }
-  function limiteSupCampoJogador(el){
-    var topo =parseInt($(el).css('top'));
-    if(topo >=campo.yMin){
-      el===campo.yMin
-    }
+  function limiteCampoJogador(el, limSup, limInf){
+    var topo = calculaCimaJogador1(el);
+    var altura = parseInt($(el).css('height'));
+    var baixo = topo + altura;
+      if(topo <= limSup){
+        $(el).css('top', calculaTopoDiv(el, limSup));
+      }
+      if(baixo >= limInf){
+        $(el).css('top', calculaTopoDiv(el, limInf-altura));
+      }
     }
 }
 
