@@ -433,6 +433,7 @@ function moveBonecos() {
   deslocacao('.grEquipa1', TECLA.Q, -movimento);
   deslocacao('.grEquipa1', TECLA.A, movimento);
   deslocacao('.defesaEquipa1', TECLA.W, -movimento);
+  limiteSupCampoJogador('.defesaEquipa1');
   deslocacao('.defesaEquipa1', TECLA.S, movimento);
   deslocacao('.mediosEquipa1', TECLA.E, -movimento);
   deslocacao('.mediosEquipa1', TECLA.D, movimento);
@@ -455,6 +456,11 @@ function moveBonecos() {
       $(el).css('top', topo + mov);
     }
   }
-
+  function limiteSupCampoJogador(el){
+    var topo =parseInt($(el).css('top'));
+    if(topo >=campo.yMin){
+      el===campo.yMin
+    }
+    }
 }
 
