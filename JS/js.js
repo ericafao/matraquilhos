@@ -1,5 +1,9 @@
 // JavaScript Document
-
+$(document).ready(function(){
+$('#iniciar').click(function(){
+  $('.container').hide();
+  iniciarJogo();
+});
 /**
  * #############################################################################
  * ### VARIAVEIS GLOBAIS
@@ -64,7 +68,7 @@ var matrecos = {
   }
 };
 
-$(function () {
+function iniciarJogo () {
   matrecos.timer = setInterval(gameloop, 30);
 
   $(document).keydown(function (e) {
@@ -74,7 +78,8 @@ $(function () {
   $(document).keyup(function (e) {
     matrecos.teclasPressionadas[e.which] = false;
   });
-});
+};
+
 
 /**
  * Loop do jogo
@@ -520,4 +525,4 @@ function moveJogadores() {
     }
   }
 }
-
+});
