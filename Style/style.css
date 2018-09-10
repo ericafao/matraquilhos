@@ -6,6 +6,7 @@ h1 {
   text-align: center;
 }
 
+/** CAMPO */
 .campo {
   background: url(../img/fundo_jogo.jpg) no-repeat; 
   background-size: var(--campo--width) var(--campo--height);
@@ -20,6 +21,7 @@ h1 {
   z-index: -1;
 }
 
+/** BONECOS */
 .bonecos1 {
   background: url(../img/matrecosA.png);
   background-size: var(--boneco--width) var(--boneco--height);
@@ -27,7 +29,6 @@ h1 {
   height: var(--boneco--height);
   width: var(--boneco--width);
 }
-
 .bonecos2 {
   background: url(../img/matrecosB.png);
   background-size: var(--boneco--width) var(--boneco--height);
@@ -36,7 +37,8 @@ h1 {
   width: var(--boneco--width);
 }
 
-.grEquipa1 {
+/** EQUIPA A */
+.grEquipaA {
   height: var(--boneco--height);
   width: var(--boneco--width);
   position: relative;
@@ -44,8 +46,7 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
 }
-
-.defesaEquipa1 {
+.defesaEquipaA {
   height: var(--defesas--height);
   width: var(--boneco--width);
   position: relative;
@@ -53,8 +54,7 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
 }
-
-.mediosEquipa1 {
+.mediosEquipaA {
   height: var(--medios--height);
   width: var(--boneco--width);
   position: relative;
@@ -62,8 +62,7 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
 }
-
-.avancadosEquipa1 {
+.avancadosEquipaA {
   height: var(--avancados--height);
   width: var(--boneco--width);
   position: relative;
@@ -72,7 +71,8 @@ h1 {
   justify-content: space-between;
 }
 
-.grEquipa2 {
+/** EqUIPA B */
+.grEquipaB {
   height: var(--boneco--height);
   width: var(--boneco--width);
   position: relative;
@@ -80,8 +80,7 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
 }
-
-.defesaEquipa2 {
+.defesaEquipaB {
   height: var(--defesas--height);
   width: var(--boneco--width);
   position: relative;
@@ -89,8 +88,7 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
 }
-
-.mediosEquipa2 {
+.mediosEquipaB {
   height: var(--medios--height);
   width: var(--boneco--width);
   position: relative;
@@ -98,8 +96,7 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
 }
-
-.avancadosEquipa2 {
+.avancadosEquipaB {
   height: var(--avancados--height);
   width: var(--boneco--width);
   position: relative;
@@ -108,6 +105,7 @@ h1 {
   justify-content: space-between;
 }
 
+/** BOLA */
 .bola {
   background-color: burlywood;
   position: relative;
@@ -117,12 +115,12 @@ h1 {
   z-index: 1;
 }
 
+/** TECLAS */
 #teclasA {
   position: absolute;
   font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
   top: 430px;
 }
-
 #teclasB {
   position: absolute;
   font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
@@ -130,11 +128,11 @@ h1 {
   left: 200px;
 }
 
+/** MARCADOR */
 #marcador {
   position: absolute;
   font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
   font-size: 16px;
   left: 15%;
   top: 240px;
-
 }
