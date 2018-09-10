@@ -506,7 +506,7 @@ function moveJogadores() {
    * Limita o movimento dos jogadores aos limites do campo
    * @param el elemento a limitar
    * @param limSup limite superior
-   * @param limInf limite inferioe
+   * @param limInf limite inferior
    */
   function limiteCampoJogador(el, limSup, limInf) {
     var topo = calculaCimaJogador1(el);

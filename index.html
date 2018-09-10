@@ -4,15 +4,13 @@
   <meta charset="utf-8">
   <title>Documento sem título</title>
   <link href="Style/style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
   <style>
     :root {
-      --campo--bg-color: green;
       --campo--width: 600px;
       --campo--height: 433px;
-
-      --boneco1--bg-color: blue;
-      --boneco2--bg-color: red;
 
       --defesas--height: 160px;
       --medios--height: 350px;
@@ -33,6 +31,7 @@
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
   <script src="JS/js.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 
@@ -92,6 +91,38 @@
 
   </div>
 </div>
+
+<div class="container" id="loginContainer">
+   <div class="main-login main-center">
+      <form class="form-horizontal" method="post" action="#">
+
+        <div class="form-group">
+          <label for="nomeEquipaA" class="cols-sm-2 control-label">Equipa A</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="nomeEquipaA" id="nomeEquipaA"  placeholder="Nome da equipa A"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="nomeEquipaA" class="cols-sm-2 control-label">Equipa B</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="nomeEquipaB" id="nomeEquipaB"  placeholder="Nome da equipa B"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group ">
+          <button type="button" class="btn btn-primary btn-lg btn-block login-button">Novo Jogo</button>
+        </div>
+      </form>
+    </div>
+</div>
+
 <footer>
   <div id="marcador">
     <div id="EquipaA" class="score">Equipa A: <span id="scoreA">0</span></div>
@@ -108,17 +139,6 @@
     <h3>Equipa B:</h3>
     <p> SUBIR: U I O P</p>
     <p> DESCER: J K L Ç</p>
-  </div>
-  <div class="ocultas">
-    <div id="inicioJogo">
-      <input type="text">
-      <input type="text">
-      <input type="button" name="Iniciar">
-    </div>
-    <div class="finalJogo">
-      <label for=""></label>
-      <input type="button" name="Novo Jogo">
-    </div>
   </div>
 </footer>
 </body>
