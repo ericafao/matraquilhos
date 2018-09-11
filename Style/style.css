@@ -43,6 +43,7 @@ h1 {
 .grEquipaA {
   height: var(--boneco--height);
   width: var(--boneco--width);
+  padding-left: var(--gr--padding);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -77,6 +78,7 @@ h1 {
 .grEquipaB {
   height: var(--boneco--height);
   width: var(--boneco--width);
+  padding-right: var(--gr--padding);
   position: relative;
   display: flex;
   flex-direction: column;
