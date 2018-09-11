@@ -29,7 +29,7 @@ var baliza = {
   xEsq: campo.xMin,
   xDta: campo.xMax,
   yMin: -70,
-  yMax: 65
+  yMax: 60
 };
 
 var TECLA = {
@@ -207,10 +207,11 @@ function resetBola(direccao) {
  * @param equipa
  */
 function vencedor(score, equipa) {
-  if (score === 10) {
+  if (score === 2) {
     alert("A equipa " + equipa + " ganhou.");
     resetMarcador();
     setScore(marcador.scoreA, marcador.scoreB);
+    $('#winnerContainer').show();
   }
 }
 
