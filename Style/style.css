@@ -179,3 +179,9 @@ input::-webkit-input-placeholder {
 #winnerContainer{
   display: none;
 }
+
+.container{
+  margin: 0px;
+  padding: 0px;
+
+}

@@ -108,8 +108,16 @@ $(document).ready(function(){
 
   function pararJogo(){
     var bola = matrecos.bola;
+    
 
-   bola(velocidade, '0');
+   bola= {
+    velocidade: 0,
+    x: 0,
+    y: 0,
+    direcX: 0, 
+    direcY: 0
+   }
+   clearInterval(matrecos.timer);
   }
   /**
    * #############################################################################
