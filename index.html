@@ -2,11 +2,12 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Documento sem título</title>
+  <title>Matraquilhos</title>
   <link href="Style/style.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
+  <!-- VARIAVEIS -->
   <style>
     :root {
       --campo--width: 600px;
@@ -38,7 +39,9 @@
 <body>
 <header><h1>Matraquilhos</h1></header>
 
+<!-- JOGO -->
 <div class="jogo">
+  <!-- CAMPO -->
   <div class="campo">
 
     <div class="grEquipaA" style="padding-left: var(--gr--padding)">
@@ -92,37 +95,37 @@
   </div>
 </div>
 
-<div class="container" id="loginContainer">
-   <div class="main-login main-center">
-      <form class="form-horizontal" method="post" action="#">
-        <h3 class="text-center"> Matraquilhos </h3>
-        <div class="form-group">
-          <label for="nomeEquipaA" class="cols-sm-2 control-label">Equipa A</label>
-          <div class="cols-sm-10">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" name="nomeEquipaA" id="nomeEquipaA"  placeholder="Nome da equipa A"/>
-            </div>
+<!-- NOVO JOGO -->
+<div class="container" id="novoJogoContainer">
+  <div class="main-login main-center">
+    <form class="form-horizontal" method="post" action="#">
+      <h3 class="text-center"> Matraquilhos </h3>
+      <div class="form-group">
+        <label for="nomeEquipaA" class="cols-sm-2 control-label">Equipa A</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+            <input type="text" class="form-control" name="nomeEquipaA" id="nomeEquipaA"  placeholder="Nome da equipa A"/>
           </div>
         </div>
-
-        <div class="form-group">
-          <label for="nomeEquipaA" class="cols-sm-2 control-label">Equipa B</label>
-          <div class="cols-sm-10">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" name="nomeEquipaB" id="nomeEquipaB"  placeholder="Nome da equipa B"/>
-            </div>
+      </div>
+      <div class="form-group">
+        <label for="nomeEquipaA" class="cols-sm-2 control-label">Equipa B</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+            <input type="text" class="form-control" name="nomeEquipaB" id="nomeEquipaB"  placeholder="Nome da equipa B"/>
           </div>
         </div>
-
-        <div class="form-group ">
-          <button type="button" id="iniciar" class="btn btn-primary btn-lg btn-block login-button">Novo Jogo</button>
-        </div>
-      </form>
-    </div>
+      </div>
+      <div class="form-group ">
+        <button type="button" id="iniciar" class="btn btn-primary btn-lg btn-block login-button">Novo Jogo</button>
+      </div>
+    </form>
+  </div>
 </div>
 
+<!-- VENCEDOR -->
 <div class="container" id="winnerContainer">
   <div class="main-login main-center">
     <form class="form-horizontal" method="post" action="#">
@@ -139,21 +142,54 @@
 </div>
 
 <footer>
+  <!-- MARCADOR -->
   <div id="marcador">
     <div id="EquipaA" class="score">Equipa A: <span id="scoreA">0</span></div>
     <div id="EquipaB" class="score">Equipa B: <span id="scoreB">0</span></div>
   </div>
-  <div id="teclasA">
-    <h2>Teclas:</h2>
-    <h3>Equipa A:</h3>
-    <p> SUBIR: Q W E R</p>
-    <p> DESCER: A S D F</p>
-  </div>
-  <div id="teclasB">
-    <p></p>
-    <h3>Equipa B:</h3>
-    <p> SUBIR: U I O P</p>
-    <p> DESCER: J K L Ç</p>
+  <!-- TECLAS -->
+  <div class="container" id="teclasContainer">
+    <div class="main-login main-center">
+      <form class="form-horizontal" method="post" action="#">
+        <h3 class="text-center"> Teclas </h3>
+        <div class="form-group">
+          <div class="teclas">
+            <label for="nomeEquipaA" class="cols-sm-2 control-label">Equipa A:</label>
+            <div class="keypad">
+              <div class="keys">
+                <button type="button" class="btn btn-primary btn-xs">Q</button>
+                <button type="button" class="btn btn-primary btn-xs">W</button>
+                <button type="button" class="btn btn-primary btn-xs">E</button>
+                <button type="button" class="btn btn-primary btn-xs">R</button>
+              </div>
+              <div class="keys">
+                <button type="button" class="btn btn-primary btn-xs">A</button>
+                <button type="button" class="btn btn-primary btn-xs">S</button>
+                <button type="button" class="btn btn-primary btn-xs">D</button>
+                <button type="button" class="btn btn-primary btn-xs">F</button>
+              </div>
+            </div>
+          </div>
+          <div class="teclas">
+            <label for="nomeEquipaA" class="cols-sm-2 control-label">Equipa B:</label>
+            <div class="keypad">
+              <div class="keys">
+                <button type="button" class="btn btn-primary btn-xs">U</button>
+                <button type="button" class="btn btn-primary btn-xs">I</button>
+                <button type="button" class="btn btn-primary btn-xs">O</button>
+                <button type="button" class="btn btn-primary btn-xs">P</button>
+              </div>
+              <div class="keys">
+                <button type="button" class="btn btn-primary btn-xs">J</button>
+                <button type="button" class="btn btn-primary btn-xs">K</button>
+                <button type="button" class="btn btn-primary btn-xs">L</button>
+                <button type="button" class="btn btn-primary btn-xs">Ç</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </footer>
 </body>

@@ -68,6 +68,9 @@ $(document).ready(function(){
     }
   };
 
+  /**
+   * Inicia um novo jogo
+   */
   function iniciarJogo () {
     matrecos.timer = setInterval(gameloop, 30);
 

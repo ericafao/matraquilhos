@@ -1,8 +1,10 @@
 @charset "utf-8";
 /* CSS Document */
 
-h1 {
+html, body, footer {
   font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+}
+h1 {
   text-align: center;
 }
 
@@ -71,7 +73,7 @@ h1 {
   justify-content: space-between;
 }
 
-/** EqUIPA B */
+/** EQUIPA B */
 .grEquipaB {
   height: var(--boneco--height);
   width: var(--boneco--width);
@@ -116,28 +118,32 @@ h1 {
 }
 
 /** TECLAS */
-#teclasA {
+#teclasContainer{
   position: absolute;
-  font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
-  top: 430px;
+  top: 450px;
+  left: -415px;
 }
-#teclasB {
-  position: absolute;
-  font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
-  top: 477px;
-  left: 200px;
+.keys:not(:last-of-type) {
+  margin-bottom: 4px;
+}
+.teclas button {
+  width: 25px;
+}
+.teclas {
+  padding: 5px;
+  width: 134px;
+  display: inline-block;
 }
 
 /** MARCADOR */
 #marcador {
   position: absolute;
-  font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
   font-size: 16px;
   left: 15%;
   top: 240px;
 }
 
-/** LOGIN */
+/** NOVO JOGO */
 .form-group{
   margin-bottom: 15px;
 }
@@ -163,12 +169,13 @@ input::-webkit-input-placeholder {
   margin-top: 30px;
   margin: 0 auto;
   max-width: 330px;
-  padding: 40px 40px;
+  padding: 5px 40px;
 }
 .login-button{
   margin-top: 5px;
 }
 
+/** VENCEDOR */
 #winnerContainer{
   display: none;
 }
