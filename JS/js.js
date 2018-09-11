@@ -2,6 +2,7 @@
 $(document).ready(function(){
   $('#iniciar').click(function(){
     $('.container').hide();
+    alterarNomes();
     iniciarJogo();
   });
   /**
@@ -17,6 +18,9 @@ $(document).ready(function(){
   const larguraCampo = parseInt(rootStyles.getPropertyValue('--campo--width'));
   const bolaSize = parseInt(rootStyles.getPropertyValue('--bola--size'));
   const grPadding = parseInt(rootStyles.getPropertyValue('--gr--padding'));
+  const maxScore = 10;
+  var nomeEquipaA = "A";
+  var nomeEquipaB = "B";
 
   const campo = {
     xMin: -300,
@@ -52,12 +56,12 @@ $(document).ready(function(){
 
   };
 
-  const marcador = {
+  var marcador = {
     scoreA: 0,
     scoreB: 0
   };
 
-  const matrecos = {
+  var matrecos = {
     teclasPressionadas: [],
     bola: {
       velocidade: 3, //quantos pixeis move a bola de cada vez
@@ -67,6 +71,17 @@ $(document).ready(function(){
       direcY: 1
     }
   };
+
+  /**
+   * Actualiza nomes das equipas
+   */
+  function alterarNomes (){
+    nomeEquipaA = $("#nomeEquipaA").val() === '' ? nomeEquipaA : $("#nomeEquipaA").val();
+    nomeEquipaB = $('#nomeEquipaB').val() === '' ? nomeEquipaB : $("#nomeEquipaB").val();
+
+      $('#equipaA').text("Equipa " + nomeEquipaA + ": ");
+      $('#equipaB').text("Equipa " + nomeEquipaB + ": ");
+  }
 
   /**
    * Inicia um novo jogo
@@ -82,7 +97,6 @@ $(document).ready(function(){
       matrecos.teclasPressionadas[e.which] = false;
     });
   };
-
 
   /**
    * Loop do jogo
@@ -170,9 +184,9 @@ $(document).ready(function(){
   function goloA() {
     resetBola(-1);
     marcador.scoreA++;
-    $('#scoreA').html(marcador.scoreA);
+    setMarcador(marcador.scoreA, marcador.scoreB);
 
-    vencedor(marcador.scoreA, "A");
+    vencedor(marcador.scoreA, nomeEquipaA);
   }
 
   /**
@@ -181,9 +195,9 @@ $(document).ready(function(){
   function goloB() {
     resetBola(1);
     marcador.scoreB++;
-    $('#scoreB').html(marcador.scoreB);
+    setMarcador(marcador.scoreA, marcador.scoreB);
 
-    vencedor(marcador.scoreB, "B");
+    vencedor(marcador.scoreB, nomeEquipaB);
   }
 
   /**
@@ -210,10 +224,9 @@ $(document).ready(function(){
    * @param equipa
    */
   function vencedor(score, equipa) {
-    if (score === 2) {
+    if (score === maxScore) {
       alert("A equipa " + equipa + " ganhou.");
       resetMarcador();
-      setScore(marcador.scoreA, marcador.scoreB);
       $('#winnerContainer').show();
     }
   }
@@ -224,6 +237,7 @@ $(document).ready(function(){
   function resetMarcador() {
     marcador.scoreA = 0;
     marcador.scoreB = 0;
+    setMarcador(marcador.scoreA, marcador.scoreB);
   }
 
   /**
@@ -231,7 +245,7 @@ $(document).ready(function(){
    * @param scoreA pontuacao equipa A
    * @param scoreB pontuacao equipa B
    */
-  function setScore(scoreA, scoreB) {
+  function setMarcador(scoreA, scoreB) {
     $('#scoreA').html(scoreA);
     $('#scoreB').html(scoreB);
   }
