@@ -16,7 +16,7 @@ h1 {
   width: var(--campo--width);
   position: absolute;
   overflow: hidden;
-  left: 25%;
+  left: 27%;
   display: flex;
   align-items: center;
   justify-content: space-between;

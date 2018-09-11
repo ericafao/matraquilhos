@@ -1,7 +1,7 @@
 // JavaScript Document
 $(document).ready(function(){
   $('#iniciar').click(function(){
-    $('.container').hide();
+    $('#novoJogoContainer').hide();
     alterarNomes();
     iniciarJogo();
   });
@@ -18,7 +18,7 @@ $(document).ready(function(){
   const larguraCampo = parseInt(rootStyles.getPropertyValue('--campo--width'));
   const bolaSize = parseInt(rootStyles.getPropertyValue('--bola--size'));
   const grPadding = parseInt(rootStyles.getPropertyValue('--gr--padding'));
-  const maxScore = 10;
+  const maxScore = 2;
   var nomeEquipaA = "A";
   var nomeEquipaB = "B";
 
@@ -52,7 +52,7 @@ $(document).ready(function(){
     J: 74,
     K: 75,
     L: 76,
-    Ç: 186
+    Ç: 192
 
   };
 
@@ -106,6 +106,11 @@ $(document).ready(function(){
     moveJogadores();
   }
 
+  function pararJogo(){
+    var bola = matrecos.bola;
+
+   bola(velocidade, '0');
+  }
   /**
    * #############################################################################
    * ### MOVE BOLA
@@ -225,9 +230,10 @@ $(document).ready(function(){
    */
   function vencedor(score, equipa) {
     if (score === maxScore) {
-      alert("A equipa " + equipa + " ganhou.");
       resetMarcador();
       $('#winnerContainer').show();
+      $('#vencedor').text("A equipa " + equipa + " ganhou.");
+      pararJogo();
     }
   }
 
