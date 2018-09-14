@@ -6,6 +6,16 @@ $(document).ready(function(){
     iniciarJogo();
   });
 
+  $('#desforra').click(function(){
+    $('#winnerContainer').hide();
+    iniciarJogo();
+  });
+
+  $('#reiniciar').click(function(){
+    $('#winnerContainer').hide();
+    $('#novoJogoContainer').show();
+  });
+
   /**
    * #############################################################################
    * ### VARIAVEIS GLOBAIS
@@ -19,7 +29,7 @@ $(document).ready(function(){
   const larguraCampo = parseInt(rootStyles.getPropertyValue('--campo--width'));
   const bolaSize = parseInt(rootStyles.getPropertyValue('--bola--size'));
   const grPadding = parseInt(rootStyles.getPropertyValue('--gr--padding'));
-  const maxScore = 10;
+  const maxScore = 2;
   var nomeEquipaA = "A";
   var nomeEquipaB = "B";
 
@@ -65,7 +75,7 @@ $(document).ready(function(){
   var matrecos = {
     teclasPressionadas: [],
     bola: {
-      velocidade: 3, //quantos pixeis move a bola de cada vez
+      velocidade: 4, //quantos pixeis move a bola de cada vez
       x: 0,
       y: 0,
       direcX: 1, //quando a direcção é 1 a bola move-se no sentido positivo do eixo
@@ -108,16 +118,7 @@ $(document).ready(function(){
   }
 
   function pararJogo(){
-    var bola = matrecos.bola;
-    
 
-   bola= {
-    velocidade: 0,
-    x: 0,
-    y: 0,
-    direcX: 0, 
-    direcY: 0
-   }
    clearInterval(matrecos.timer);
   }
   /**
