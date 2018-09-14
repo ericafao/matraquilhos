@@ -1,5 +1,10 @@
 // JavaScript Document
 $(document).ready(function(){
+  /**
+   * #############################################################################
+   * ### BOTOES
+   * #############################################################################
+   */
   $('#iniciar').click(function(){
     $('#novoJogoContainer').hide();
     alterarNomes();
@@ -12,6 +17,7 @@ $(document).ready(function(){
   });
 
   $('#reiniciar').click(function(){
+    resetNomes();
     $('#winnerContainer').hide();
     $('#novoJogoContainer').show();
   });
@@ -89,11 +95,31 @@ $(document).ready(function(){
   function alterarNomes (){
     nomeEquipaA = $("#nomeEquipaA").val() === '' ? nomeEquipaA : $("#nomeEquipaA").val();
     nomeEquipaB = $('#nomeEquipaB').val() === '' ? nomeEquipaB : $("#nomeEquipaB").val();
+    setNomes(nomeEquipaA, nomeEquipaB);
+  }
 
-    $('#marcadorA').text("Equipa " + nomeEquipaA + ": ");
-    $('#marcadorB').text("Equipa " + nomeEquipaB + ": ");
-    $('#teclasA').text("Equipa " + nomeEquipaA + ": ");
-    $('#teclasB').text("Equipa " + nomeEquipaB + ": ");
+  /**
+   * Reset dos nomes para nomes default das equipas, A e B
+   */
+  function resetNomes(){
+    nomeEquipaA = "A";
+    nomeEquipaB = "B";
+    setNomes(nomeEquipaA, nomeEquipaB);
+    /** Limpa campos input dos nomes das equipas */
+    $('#nomeEquipaA').val("");
+    $('#nomeEquipaB').val("");
+  }
+
+  /**
+   * Set dos nomes das equipas
+   * @param nomeA nome da equipa A
+   * @param nomeB nome da equipa B
+   */
+  function setNomes(nomeA, nomeB){
+    $('#marcadorA').text("Equipa " + nomeA + ": ");
+    $('#marcadorB').text("Equipa " + nomeB + ": ");
+    $('#teclasA').text("Equipa " + nomeA + ": ");
+    $('#teclasB').text("Equipa " + nomeB + ": ");
   }
 
   /**
