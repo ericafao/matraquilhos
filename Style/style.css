@@ -24,14 +24,14 @@ h1 {
 }
 
 /** BONECOS */
-.bonecos1 {
+.bonecosA {
   background: url(../img/matrecosA.png);
   background-size: var(--boneco--width) var(--boneco--height);
   position: relative;
   height: var(--boneco--height);
   width: var(--boneco--width);
 }
-.bonecos2 {
+.bonecosB {
   background: url(../img/matrecosB.png);
   background-size: var(--boneco--width) var(--boneco--height);
   position: relative;

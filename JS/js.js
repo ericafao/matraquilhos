@@ -29,7 +29,7 @@ $(document).ready(function(){
   const larguraCampo = parseInt(rootStyles.getPropertyValue('--campo--width'));
   const bolaSize = parseInt(rootStyles.getPropertyValue('--bola--size'));
   const grPadding = parseInt(rootStyles.getPropertyValue('--gr--padding'));
-  const maxScore = 2;
+  const maxScore = 10;
   var nomeEquipaA = "A";
   var nomeEquipaB = "B";
 
@@ -90,8 +90,10 @@ $(document).ready(function(){
     nomeEquipaA = $("#nomeEquipaA").val() === '' ? nomeEquipaA : $("#nomeEquipaA").val();
     nomeEquipaB = $('#nomeEquipaB').val() === '' ? nomeEquipaB : $("#nomeEquipaB").val();
 
-      $('#equipaA').text("Equipa " + nomeEquipaA + ": ");
-      $('#equipaB').text("Equipa " + nomeEquipaB + ": ");
+    $('#marcadorA').text("Equipa " + nomeEquipaA + ": ");
+    $('#marcadorB').text("Equipa " + nomeEquipaB + ": ");
+    $('#teclasA').text("Equipa " + nomeEquipaA + ": ");
+    $('#teclasB').text("Equipa " + nomeEquipaB + ": ");
   }
 
   /**
@@ -117,10 +119,6 @@ $(document).ready(function(){
     moveJogadores();
   }
 
-  function pararJogo(){
-
-   clearInterval(matrecos.timer);
-  }
   /**
    * #############################################################################
    * ### MOVE BOLA
@@ -243,7 +241,7 @@ $(document).ready(function(){
       resetMarcador();
       $('#winnerContainer').show();
       $('#vencedor').text("A equipa " + equipa + " ganhou.");
-      pararJogo();
+      clearInterval(matrecos.timer);
     }
   }
 
