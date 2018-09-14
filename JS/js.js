@@ -5,6 +5,7 @@ $(document).ready(function(){
     alterarNomes();
     iniciarJogo();
   });
+
   /**
    * #############################################################################
    * ### VARIAVEIS GLOBAIS
@@ -18,7 +19,7 @@ $(document).ready(function(){
   const larguraCampo = parseInt(rootStyles.getPropertyValue('--campo--width'));
   const bolaSize = parseInt(rootStyles.getPropertyValue('--bola--size'));
   const grPadding = parseInt(rootStyles.getPropertyValue('--gr--padding'));
-  const maxScore = 2;
+  const maxScore = 10;
   var nomeEquipaA = "A";
   var nomeEquipaB = "B";
 
@@ -296,57 +297,57 @@ $(document).ready(function(){
      */
     /** GR */
     const grADir = campo.xMin + larguraBoneco + grPadding;
-    const grACima = calculaCimaJogador1('.grEquipaA');
-    const grABaixo = grACima + alturaBoneco;
+    var grACima = calculaCimaJogador1('.grEquipaA');
+    var grABaixo = grACima + alturaBoneco;
     mudaDirecaoPositiva(grADir, grACima, grABaixo);
 
     /** DEFESAS */
     const defADir = grADir + larguraBoneco + divSpacing;
     // Defesa 1
-    const def1ACima = calculaCimaJogador1('.defesaEquipaA');
-    const def1ABaixo = def1ACima + alturaBoneco;
+    var def1ACima = calculaCimaJogador1('.defesaEquipaA');
+    var def1ABaixo = def1ACima + alturaBoneco;
     mudaDirecaoPositiva(defADir, def1ACima, def1ABaixo);
     // Defesa 2
-    const def2ACima = def1ABaixo + defSpacing;
-    const def2ABaixo = def2ACima + alturaBoneco;
+    var def2ACima = def1ABaixo + defSpacing;
+    var def2ABaixo = def2ACima + alturaBoneco;
     mudaDirecaoPositiva(defADir, def2ACima, def2ABaixo);
 
     /** MEDIOS */
     const medADir = defADir + 2 * (larguraBoneco + divSpacing);
     // Medio 1
-    const med1ACima = calculaCimaJogador1('.mediosEquipaA');
-    const med1ABaixo = med1ACima + alturaBoneco;
+    var med1ACima = calculaCimaJogador1('.mediosEquipaA');
+    var med1ABaixo = med1ACima + alturaBoneco;
     mudaDirecaoPositiva(medADir, med1ACima, med1ABaixo);
     // Medio 2
-    const med2ACima = med1ABaixo + mediosSpacing;
-    const med2ABaixo = med2ACima + alturaBoneco;
+    var med2ACima = med1ABaixo + mediosSpacing;
+    var med2ABaixo = med2ACima + alturaBoneco;
     mudaDirecaoPositiva(medADir, med2ACima, med2ABaixo);
     // Medio 3
-    const med3ACima = med2ABaixo + mediosSpacing;
-    const med3ABaixo = med3ACima + alturaBoneco;
+    var med3ACima = med2ABaixo + mediosSpacing;
+    var med3ABaixo = med3ACima + alturaBoneco;
     mudaDirecaoPositiva(medADir, med3ACima, med3ABaixo);
     // Medio 4
-    const med4ACima = med3ABaixo + mediosSpacing;
-    const med4ABaixo = med4ACima + alturaBoneco;
+    var med4ACima = med3ABaixo + mediosSpacing;
+    var med4ABaixo = med4ACima + alturaBoneco;
     mudaDirecaoPositiva(medADir, med4ACima, med4ABaixo);
     // Medio 5
-    const med5ACima = med4ABaixo + mediosSpacing;
-    const med5ABaixo = med5ACima + alturaBoneco;
+    var med5ACima = med4ABaixo + mediosSpacing;
+    var med5ABaixo = med5ACima + alturaBoneco;
     mudaDirecaoPositiva(medADir, med5ACima, med5ABaixo);
 
     /** AVANÇADOS */
     const avADir = medADir + 2 * larguraBoneco + bolaSize + 3 * divSpacing;
     // Avancado 1
-    const av1ACima = calculaCimaJogador1('.avancadosEquipaA');
-    const av1ABaixo = av1ACima + alturaBoneco;
+    var av1ACima = calculaCimaJogador1('.avancadosEquipaA');
+    var av1ABaixo = av1ACima + alturaBoneco;
     mudaDirecaoPositiva(avADir, av1ACima, av1ABaixo);
     // Avancado 2
-    const av2ACima = av1ABaixo + avancadosSpacing;
-    const av2ABaixo = av2ACima + alturaBoneco;
+    var av2ACima = av1ABaixo + avancadosSpacing;
+    var av2ABaixo = av2ACima + alturaBoneco;
     mudaDirecaoPositiva(avADir, av2ACima, av2ABaixo);
     // Avancado 3
-    const av3ACima = av2ABaixo + avancadosSpacing;
-    const av3ABaixo = av3ACima + alturaBoneco;
+    var av3ACima = av2ABaixo + avancadosSpacing;
+    var av3ABaixo = av3ACima + alturaBoneco;
     mudaDirecaoPositiva(avADir, av3ACima, av3ABaixo);
 
     /**
@@ -356,57 +357,57 @@ $(document).ready(function(){
      */
     /** GR */
     const grBEsq = campo.xMax - larguraBoneco - grPadding;
-    const grBCima = calculaCimaJogador1('.grEquipaB');
-    const grBBaixo = grBCima + alturaBoneco;
+    var grBCima = calculaCimaJogador1('.grEquipaB');
+    var grBBaixo = grBCima + alturaBoneco;
     mudaDirecaoNegativa(grBEsq, grBCima, grBBaixo);
 
     /** DEFESAS */
     const defBEsq = grBEsq - larguraBoneco - divSpacing;
     // Defesa 1
-    const def1BCima = calculaCimaJogador1('.defesaEquipaB');
-    const def1BBaixo = def1BCima + alturaBoneco;
+    var def1BCima = calculaCimaJogador1('.defesaEquipaB');
+    var def1BBaixo = def1BCima + alturaBoneco;
     mudaDirecaoNegativa(defBEsq, def1BCima, def1BBaixo);
     // Defesa 2
-    const def2BCima = def1BBaixo + defSpacing;
-    const def2BBaixo = def2BCima + alturaBoneco;
+    var def2BCima = def1BBaixo + defSpacing;
+    var def2BBaixo = def2BCima + alturaBoneco;
     mudaDirecaoNegativa(defBEsq, def2BCima, def2BBaixo);
 
     /** MEDIOS */
     const medBEsq = defBEsq - 2 * (larguraBoneco + divSpacing);
     // Medio 1
-    const med1BCima = calculaCimaJogador1('.mediosEquipaB');
-    const med1BBaixo = med1BCima + alturaBoneco;
+    var med1BCima = calculaCimaJogador1('.mediosEquipaB');
+    var med1BBaixo = med1BCima + alturaBoneco;
     mudaDirecaoNegativa(medBEsq, med1BCima, med1BBaixo);
     // Medio 2
-    const med2BCima = med1BBaixo + mediosSpacing;
+    var med2BCima = med1BBaixo + mediosSpacing;
     var med2BBaixo = med2BCima + alturaBoneco;
     mudaDirecaoNegativa(medBEsq, med2BCima, med2BBaixo);
     // Medio 3
-    const med3BCima = med2BBaixo + mediosSpacing;
-    const med3BBaixo = med3BCima + alturaBoneco;
+    var med3BCima = med2BBaixo + mediosSpacing;
+    var med3BBaixo = med3BCima + alturaBoneco;
     mudaDirecaoNegativa(medBEsq, med3BCima, med3BBaixo);
     // Medio 4
-    const med4BCima = med3BBaixo + mediosSpacing;
-    const med4BBaixo = med4BCima + alturaBoneco;
+    var med4BCima = med3BBaixo + mediosSpacing;
+    var med4BBaixo = med4BCima + alturaBoneco;
     mudaDirecaoNegativa(medBEsq, med4BCima, med4BBaixo);
     // Medio 5
-    const med5BCima = med4BBaixo + mediosSpacing;
-    const med5BBaixo = med5BCima + alturaBoneco;
+    var med5BCima = med4BBaixo + mediosSpacing;
+    var med5BBaixo = med5BCima + alturaBoneco;
     mudaDirecaoNegativa(medBEsq, med5BCima, med5BBaixo);
 
     /** AVANÇADOS */
     const avBEsq = medBEsq - 2 * larguraBoneco - bolaSize - 3 * divSpacing;
     // Avancado 1
-    const av1BCima = calculaCimaJogador1('.avancadosEquipaB');
-    const av1BBaixo = av1BCima + alturaBoneco;
+    var av1BCima = calculaCimaJogador1('.avancadosEquipaB');
+    var av1BBaixo = av1BCima + alturaBoneco;
     mudaDirecaoNegativa(avBEsq, av1BCima, av1BBaixo);
     // Avancado 2
-    const av2BCima = av1BBaixo + avancadosSpacing;
-    const av2BBaixo = av2BCima + alturaBoneco;
+    var av2BCima = av1BBaixo + avancadosSpacing;
+    var av2BBaixo = av2BCima + alturaBoneco;
     mudaDirecaoNegativa(avBEsq, av2BCima, av2BBaixo);
     // Avancado 3
-    const av3BCima = av2BBaixo + avancadosSpacing;
-    const av3BBaixo = av3BCima + alturaBoneco;
+    var av3BCima = av2BBaixo + avancadosSpacing;
+    var av3BBaixo = av3BCima + alturaBoneco;
     mudaDirecaoNegativa(avBEsq, av3BCima, av3BBaixo);
 
     /**
@@ -546,9 +547,9 @@ $(document).ready(function(){
      * @param limInf limite inferior
      */
     function limiteCampoJogador(el, limSup, limInf) {
-      const topo = calculaCimaJogador1(el);
+      var topo = calculaCimaJogador1(el);
       const altura = parseInt($(el).css('height'));
-      const baixo = topo + altura;
+      var baixo = topo + altura;
       if (topo <= limSup) {
         $(el).css('top', calculaTopoDiv(el, limSup));
       }
