@@ -127,6 +127,8 @@ $(document).ready(function(){
    */
   function iniciarJogo () {
     matrecos.timer = setInterval(gameloop, 30);
+    var apito = $('#apito')[0]
+    apito.play();
 
     $(document).keydown(function (e) {
       matrecos.teclasPressionadas[e.which] = true;
@@ -229,8 +231,6 @@ $(document).ready(function(){
     marcador.scoreA++;
     setMarcador(marcador.scoreA, marcador.scoreB);
     $('#relato').text("A equipa " + nomeEquipaA + " marcou golo.");
-    var gol =$('#golo')[0]
-    gol.play();
     vencedor(marcador.scoreA, nomeEquipaA);
   }
 
@@ -242,8 +242,6 @@ $(document).ready(function(){
     marcador.scoreB++;
     setMarcador(marcador.scoreA, marcador.scoreB);
     $('#relato').text("A equipa " + nomeEquipaB + " marcou golo.");
-    var gol =$('#golo')[0]
-    gol.play();
     vencedor(marcador.scoreB, nomeEquipaB);
   }
 
@@ -277,7 +275,10 @@ $(document).ready(function(){
       $('#vencedor').text("A equipa " + equipa + " ganhou.");
       clearInterval(matrecos.timer);
       var vitoria =$('#vitoria')[0]
-    vitoria.play();
+      vitoria.play();
+    } else {
+      var gol =$('#golo')[0]
+      gol.play();
     }
   }
 
