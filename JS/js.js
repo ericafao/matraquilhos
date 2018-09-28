@@ -191,11 +191,13 @@ $(document).ready(function(){
     //verifica limite inferior do campo
     if (movBolaY() >= campo.yMax) {
       bola.direcY = -1;
+      $('#relato').text("Lançamento lateral na ala direita.");
     }
 
     //verifica limite superior do campo
     if (movBolaY() <= campo.yMin) {
       bola.direcY = 1;
+      $('#relato').text("Lançamento lateral na ala esquerda.");
     }
 
     //verifica limite direito do campo
@@ -204,6 +206,7 @@ $(document).ready(function(){
         goloA();
       } else {
         bola.direcX = -1;
+        $('#relato').text("Pontapé de baliza para a equipa " + nomeEquipaB + ".");
       }
     }
 
@@ -213,6 +216,7 @@ $(document).ready(function(){
         goloB();
       } else {
         bola.direcX = 1;
+        $('#relato').text("Pontapé de baliza para a equipa " + nomeEquipaA + ".");
       }
     }
   }
@@ -224,7 +228,9 @@ $(document).ready(function(){
     resetBola(-1);
     marcador.scoreA++;
     setMarcador(marcador.scoreA, marcador.scoreB);
-
+    $('#relato').text("A equipa " + nomeEquipaA + " marcou golo.");
+    var gol =$('#golo')[0]
+    gol.play();
     vencedor(marcador.scoreA, nomeEquipaA);
   }
 
@@ -235,7 +241,9 @@ $(document).ready(function(){
     resetBola(1);
     marcador.scoreB++;
     setMarcador(marcador.scoreA, marcador.scoreB);
-
+    $('#relato').text("A equipa " + nomeEquipaB + " marcou golo.");
+    var gol =$('#golo')[0]
+    gol.play();
     vencedor(marcador.scoreB, nomeEquipaB);
   }
 
@@ -268,6 +276,8 @@ $(document).ready(function(){
       $('#winnerContainer').show();
       $('#vencedor').text("A equipa " + equipa + " ganhou.");
       clearInterval(matrecos.timer);
+      var vitoria =$('#vitoria')[0]
+    vitoria.play();
     }
   }
 
@@ -448,6 +458,9 @@ $(document).ready(function(){
         if (movBolaX() <= limDireita && movBolaX() >= limDireita - larguraBoneco) {
           if (movBolaY() >= limCima && movBolaY() <= limBaixo) {
             bola.direcX = 1;
+            var frase =["A equipa " + nomeEquipaB + " lança um contra-ataque", "A equipa " + nomeEquipaB + " cortou a bola", "A equipa " + nomeEquipaB + " passou a bola"]
+            var aleatorio= frase[Math.floor(Math.random()*frase.length)]
+            $('#relato').text(aleatorio);
           }
         }
       }
@@ -467,6 +480,9 @@ $(document).ready(function(){
             + larguraBoneco) {
           if (movBolaY() >= limCima && movBolaY() <= limBaixo) {
             bola.direcX = -1;
+            var frase =["A equipa " + nomeEquipaB + " lança um contra-ataque", "A equipa " + nomeEquipaB + " cortou a bola", "A equipa " + nomeEquipaB + " passou a bola"]
+           var aleatorio= frase[Math.floor(Math.random()*frase.length)]
+           $('#relato').text(aleatorio);
           }
         }
       }
